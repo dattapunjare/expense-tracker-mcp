@@ -1,30 +1,80 @@
-# Expense Tracker MCP Server
+# Expense Tracker MCP
 
-This project is an MCP-based expense tracker built using FastMCP. It allows an AI assistant to add expenses, read the current expense summary, and use a reusable prompt to review monthly spending.
+## Overview
 
-## MCP Primitives
+Expense Tracker MCP is a small local Model Context Protocol (MCP) server developed using FastMCP. The project demonstrates how an AI application can interact with structured expense data through MCP primitives.
 
-### 1. Tool - add_expense
+The server provides three core MCP primitives: a tool, a resource, and a prompt. Each primitive has a different purpose and demonstrates how MCP separates actions, data access, and reusable instructions.
 
-The `add_expense` tool adds a new expense to the tracker.
 
-A tool is used because adding an expense is an action that changes the stored expense data. The model can decide when this action should be performed based on the user's request.
+How It Works:
 
-### 2. Resource - expense://summary
+The Expense Tracker stores expenses in memory while the server is running. Each expense contains an amount, category, description, and date.
 
-The `expense://summary` resource provides the current expense summary.
+The AI client can interact with the server in three ways:
 
-A resource is used because it provides addressable data that the client can read without performing an action or changing the expense data.
+Tool - add_expense
 
-### 3. Prompt - monthly_budget_review
+The add_expense tool is used to add a new expense.
 
-The `monthly_budget_review` prompt provides reusable instructions for reviewing expenses.
+It accepts:
 
-A prompt is used because it is an instruction template that the user can intentionally select when they want to review their spending.
+Amount
+Category
+Description
+
+When the tool is called, the new expense is added to the expense data.
+
+Resource - expense://summary
+
+The expense://summary resource provides the current expense information.
+
+It calculates the total spending and displays the recorded expenses. Reading the resource does not modify the stored expense data.
+
+Prompt - monthly_budget_review
+
+The monthly_budget_review prompt provides reusable instructions for reviewing expenses.
+
+It guides an AI assistant to:
+
+Calculate total spending.
+Group expenses by category.
+Identify categories with the highest spending.
+Suggest practical ways to control unnecessary expenses.
+
+
+## Design Approach
+
+The project follows a simple separation of responsibilities:
+
+MCP Client
+    |
+    v
+Expense Tracker MCP Server
+    |
+    +---- Tool ----> Add Expense
+    |
+    +---- Resource -> Read Expense Summary
+    |
+    +---- Prompt --> Review Spending Instructions
+
 
 ## Project Structure
 
-- `server.py` - Contains the FastMCP server, tool, resource, and prompt.
+- `server.py` - Contains the MCP server, tool, resource, and prompt.
 - `README.md` - Explains the project and the design choices.
 - `pyproject.toml` - Contains the project configuration and dependency.
 - `.gitignore` - Specifies files that should not be committed to Git.
+
+
+## Testing
+
+The server was tested using MCP Inspector.
+
+All three primitives were verified:
+
+add_expense successfully added expenses.
+expense://summary successfully displayed the recorded expenses and total spending.
+monthly_budget_review successfully returned the reusable budget-review instructions.
+
+
