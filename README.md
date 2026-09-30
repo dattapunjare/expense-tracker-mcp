@@ -78,3 +78,15 @@ expense://summary successfully displayed the recorded expenses and total spendin
 monthly_budget_review successfully returned the reusable budget-review instructions.
 
 
+## Output Screenshot
+
+![Output Example]("C:\Users\asus\OneDrive\Pictures\Screenshots 1\Screenshot (275).png")
+
+Here I added a new expense using the **Add Expense** tool. 
+
+![Output Example]("C:\Users\asus\OneDrive\Pictures\Screenshots 1\Screenshot (276).png")
+
+As we can see in output expense successfully added: ₹7000.00 for **Travel – Flight Ticket** 
+
+
+
