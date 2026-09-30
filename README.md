@@ -7,13 +7,13 @@ Expense Tracker MCP is a small local Model Context Protocol (MCP) server develop
 The server provides three core MCP primitives: a tool, a resource, and a prompt. Each primitive has a different purpose and demonstrates how MCP separates actions, data access, and reusable instructions.
 
 
-How It Works:
+*How It Works:*
 
 The Expense Tracker stores expenses in memory while the server is running. Each expense contains an amount, category, description, and date.
 
 The AI client can interact with the server in three ways:
 
-Tool - add_expense
+`Tool - add_expense`
 
 The add_expense tool is used to add a new expense.
 
@@ -25,13 +25,13 @@ Description
 
 When the tool is called, the new expense is added to the expense data.
 
-Resource - expense://summary
+`Resource - expense://summary`
 
 The expense://summary resource provides the current expense information.
 
 It calculates the total spending and displays the recorded expenses. Reading the resource does not modify the stored expense data.
 
-Prompt - monthly_budget_review
+`Prompt - monthly_budget_review`
 
 The monthly_budget_review prompt provides reusable instructions for reviewing expenses.
 
@@ -46,7 +46,7 @@ Suggest practical ways to control unnecessary expenses.
 ## Design Approach
 
 The project follows a simple separation of responsibilities:
-
+```text
 MCP Client
     |
     v
@@ -57,7 +57,7 @@ Expense Tracker MCP Server
     +---- Resource -> Read Expense Summary
     |
     +---- Prompt --> Review Spending Instructions
-
+```
 
 ## Project Structure
 
