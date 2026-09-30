@@ -80,11 +80,15 @@ monthly_budget_review successfully returned the reusable budget-review instructi
 
 ## Output Screenshot
 
-![Output Example]("C:\Users\asus\OneDrive\Pictures\Screenshots 1\Screenshot (275).png")
+<img width="1920" height="1080" alt="Screenshot (275)" src="https://github.com/user-attachments/assets/bd591af5-2e0b-4544-a280-3c4b06a77c90" />
+
+
 
 Here I added a new expense using the **Add Expense** tool. 
 
-![Output Example]("C:\Users\asus\OneDrive\Pictures\Screenshots 1\Screenshot (276).png")
+<img width="1920" height="1080" alt="Screenshot (276)" src="https://github.com/user-attachments/assets/6ece312d-fadc-4332-aeb0-fdab10fe3b0c" />
+
+
 
 As we can see in output expense successfully added: ₹7000.00 for **Travel – Flight Ticket** 
 
