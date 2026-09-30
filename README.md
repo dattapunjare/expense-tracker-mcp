@@ -78,15 +78,6 @@ expense://summary successfully displayed the recorded expenses and total spendin
 monthly_budget_review successfully returned the reusable budget-review instructions.
 
 
-## Output Screenshot
-
-<img width="1920" height="1080" alt="Screenshot (275)" src="https://github.com/user-attachments/assets/bd591af5-2e0b-4544-a280-3c4b06a77c90" />
-
-
-
-Here I added a new expense using the **Add Expense** tool. 
-
-<img width="1920" height="1080" alt="Screenshot (276)" src="https://github.com/user-attachments/assets/6ece312d-fadc-4332-aeb0-fdab10fe3b0c" />
 
 
 
