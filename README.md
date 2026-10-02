@@ -80,8 +80,3 @@ monthly_budget_review successfully returned the reusable budget-review instructi
 
 
 
-
-As we can see in output expense successfully added: ₹7000.00 for **Travel – Flight Ticket** 
-
-
-
