@@ -76,4 +76,3 @@ All three primitives were verified:
 add_expense successfully added expenses.
 expense://summary successfully displayed the recorded expenses and total spending.
 monthly_budget_review successfully returned the reusable budget-review instructions.
-
