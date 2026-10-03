@@ -67,6 +67,21 @@ Expense Tracker MCP Server
 - `.gitignore` - Specifies files that should not be committed to Git.
 
 
+## Architecture
+
+## Diagram
+
+```mermaid
+flowchart LR
+    U[User] --> C["MCP Client: Inspector / Claude Desktop"]
+    C -->|reads| R["Resource: expenses://current-month"]
+    C -->|calls| T["Tool: add_expense"]
+    C -->|selects| P["Prompt: monthly_review"]
+    P -.->|asks the model to use| R
+    T -->|writes file| F["expenses.json"]
+    R -->|reads file| F
+```
+
 ## Testing
 
 The server was tested using MCP Inspector.
